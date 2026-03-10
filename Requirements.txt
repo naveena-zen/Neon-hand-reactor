@@ -1,0 +1,22 @@
+# ⚡ Real-Time Neon Gesture Vision Engine
+# Python Version: 3.8 - 3.11 (3.10 recommended)
+# Install: pip install -r requirements.txt
+
+# Core
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# MediaPipe (Hand Landmark Detection)
+mediapipe>=0.10.0
+
+# MediaPipe dependencies (auto-installed but listed for clarity)
+absl-py>=1.0.0
+attrs>=23.1.0
+flatbuffers>=23.5.26
+matplotlib>=3.7.0
+protobuf>=3.20.0
+sounddevice>=0.4.6
+
+# System utilities
+setuptools>=65.0.0
+wheel>=0.40.0
