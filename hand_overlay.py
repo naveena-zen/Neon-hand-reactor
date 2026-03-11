@@ -10,10 +10,7 @@ import random
 
 MODEL_PATH = "hand_landmarker.task"
 
-
-# ─────────────────────────────────────────────
-#  🔴 LASER BEAM between two points
-# ─────────────────────────────────────────────
+# LASER BEAM between two points
 def draw_laser_beam(image, p1, p2):
     laser_outer = (0, 0, 255)
     laser_mid   = (0, 100, 255)
@@ -30,9 +27,7 @@ def draw_laser_beam(image, p1, p2):
     cv2.line(image, p1, p2, laser_core, 2, cv2.LINE_AA)
 
 
-# ─────────────────────────────────────────────
-#  🌟 LASER STRINGS (no distance limit)
-# ─────────────────────────────────────────────
+# LASER STRINGS (no distance limit)
 def draw_finger_laser_strings(image, hand1, hand2):
     h, w, _ = image.shape
 
@@ -63,10 +58,7 @@ def draw_finger_laser_strings(image, hand1, hand2):
         cv2.circle(image, (mx, my), max(5, radius // 2), neon_core, 2, cv2.LINE_AA)
         cv2.circle(image, (mx, my), radius,              neon_core, 1, cv2.LINE_AA)
 
-
-# ─────────────────────────────────────────────
 #  🌀 VORTEX PORTAL between both palms
-# ─────────────────────────────────────────────
 def draw_vortex_portal(image, hand1, hand2, angle):
     h, w, _ = image.shape
 
@@ -106,10 +98,7 @@ def draw_vortex_portal(image, hand1, hand2, angle):
     cv2.circle(image, (cx, cy), 8,  (255, 255, 255), -1, cv2.LINE_AA)
     cv2.circle(image, (cx, cy), 14, (200,  80, 255),  1, cv2.LINE_AA)
 
-
-# ─────────────────────────────────────────────
 #  💥 EXPLOSION PARTICLES
-# ─────────────────────────────────────────────
 class Particle:
     def __init__(self, x, y):
         angle  = random.uniform(0, 2 * math.pi)
@@ -162,10 +151,7 @@ def update_and_draw_particles(image, particles):
             alive.append(p)
     particles[:] = alive
 
-
-# ─────────────────────────────────────────────
 #  🖐  Hand Landmarker setup
-# ─────────────────────────────────────────────
 options = hand_landmarker.HandLandmarkerOptions(
     base_options=BaseOptions(model_asset_path=MODEL_PATH),
     num_hands=2,
